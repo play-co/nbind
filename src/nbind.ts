@@ -325,7 +325,8 @@ function initNode<ExportType extends DefaultExportType>(
 	binding.queryType = lib.NBind.queryType;
 	binding.toggleLightGC = function(enable: boolean) {}; // tslint:disable-line:no-empty
 
-	Object.keys(lib).forEach(function(key: string) {
+	// using keyof ExportType instead of string to avoid 'string cannot index ExportType'
+	Object.keys(lib).forEach(function(key: keyof ExportType) {
 		binding.lib[key] = lib[key];
 	});
 
