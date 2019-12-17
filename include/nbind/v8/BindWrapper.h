@@ -136,7 +136,6 @@ protected:
 		// create a new wrapper again.
 
 		ref->SetWeak(ref, weakCallback, Nan::WeakCallbackType::kParameter);
-		ref->MarkIndependent();
 	}
 
 	void removeInstance() {
