@@ -73,8 +73,6 @@ private:
 				&gc,
 				Nan::WeakCallbackType::kParameter
 			);
-
-			weak.MarkIndependent();
 		}
 
 		// Called by V8, calls callback and deletes the destructor.
