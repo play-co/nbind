@@ -387,6 +387,11 @@ NBIND_CLASS(NBindID) {
 	method(toString);
 }
 
+#if NODE_MAJOR_VERSION >= 10
+NAN_MODULE_WORKER_ENABLED(nbind, initModule)
+#else
 NODE_MODULE(nbind, initModule)
+NODE_MODULE(nbind, initModule)
+#endif
 
 #endif
