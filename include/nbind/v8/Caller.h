@@ -25,11 +25,11 @@ v8::Local<v8::Value> makeTypeError(
 	v8::Local<v8::Array> flagArray = Nan::New<v8::Array>(count);
 
 	for(uint32_t num = 0; num < count; ++num) {
-		flagArray->Set(num, Nan::New<v8::Boolean>(flagList[num]));
+		flagArray->Set(flagArray->CreationContext(), num, Nan::New<v8::Boolean>(flagList[num]));
 	}
 
 	// errObj->Set(Nan::New<v8::String>("types").ToLocalChecked(), typeArray);
-	errObj->Set(Nan::New<v8::String>("flags").ToLocalChecked(), flagArray);
+	errObj->Set(errObj->CreationContext(), Nan::New<v8::String>("flags").ToLocalChecked(), flagArray);
 
 	return(err);
 }

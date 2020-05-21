@@ -12,3 +12,5 @@ package-lock.json
 
 .travis.yml
 appveyor.yml
+
+.vscode/
