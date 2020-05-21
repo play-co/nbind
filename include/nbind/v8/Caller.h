@@ -23,9 +23,10 @@ v8::Local<v8::Value> makeTypeError(
 	v8::Local<v8::Object> errObj = Nan::To<v8::Object>(err).ToLocalChecked();
 	// v8::Local<v8::Array> typeArray = Nan::New<v8::Array>(count);
 	v8::Local<v8::Array> flagArray = Nan::New<v8::Array>(count);
+	auto context = flagArray->CreationContext();
 
 	for(uint32_t num = 0; num < count; ++num) {
-		flagArray->Set(flagArray->CreationContext(), num, Nan::New<v8::Boolean>(flagList[num]));
+		flagArray->Set(context, num, Nan::New<v8::Boolean>(flagList[num]));
 	}
 
 	// errObj->Set(Nan::New<v8::String>("types").ToLocalChecked(), typeArray);
