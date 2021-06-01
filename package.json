@@ -1,6 +1,6 @@
 {
 	"name": "@nuralogix/nbind",
-	"version": "0.3.20",
+	"version": "0.3.21",
 	"description": "Magical headers that make your C++ library accessible from JavaScript",
 	"main": "dist/nbind.js",
 	"typings": "dist/nbind.d.ts",
