@@ -40,7 +40,7 @@ inline auto BindingType<ValueType<ArgType>>::toWireType(ArgType &&arg) -> WireTy
 
 template <typename ArgType>
 inline ArgType BindingType<ValueType<ArgType>>::fromWireType(WireType arg) {
-	uintptr_t index = reinterpret_cast<int>(arg);
+	uintptr_t index = reinterpret_cast<uintptr_t>(arg);
 	if(index & 1) {
 		// Constructor argument is an unused dummy value.
 		TemplatedArgStorage<ArgType> storage(0);

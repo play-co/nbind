@@ -119,7 +119,7 @@ PoolRestore :: PoolRestore() : used(Pool::used), page(Pool::page) {}
 /** RAII destructor to restore the lalloc pool state. */
 
 PoolRestore :: ~PoolRestore() {
-	NBind::lreset(used, reinterpret_cast<unsigned int>(page));
+	NBind::lreset(used, reinterpret_cast<uintptr_t>(page));
 }
 
 typedef BaseSignature :: SignatureType SignatureType;
